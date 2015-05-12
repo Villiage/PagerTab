@@ -74,23 +74,23 @@ public class TabLayout extends LinearLayout {
 //        canvas.drawLine(left + width, height - strokeWidth, parentWidth, height - strokeWidth, paint);
 
 //        Í¸Ã÷¶È½¥±ä±³¾°
-//        Paint paint = new Paint();
-//        paint.setAntiAlias(true);
-//        paint.setColor(Color.CYAN);
-//        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-//
-//
-//        int left1 = position * width;
-//        Rect rect1 = new Rect();
-//        rect1.set(left1, 0, left1 + width, height);
-//        paint.setAlpha((int) (255 * (1 - progress)));
-//        canvas.drawRect(rect1, paint);
-//
-//        int left2 = (position + 1) * width;
-//        Rect rect2 = new Rect();
-//        rect2.set(left2, 0, left2 + width, height);
-//        paint.setAlpha((int) (225 * progress));
-//        canvas.drawRect(rect2, paint);
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setColor(Color.CYAN);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+
+
+        int left1 = position * width;
+        Rect rect1 = new Rect();
+        rect1.set(left1, 0, left1 + width, height);
+        paint.setAlpha((int) (255 * (1 - progress)));
+        canvas.drawRect(rect1, paint);
+
+        int left2 = (position + 1) * width;
+        Rect rect2 = new Rect();
+        rect2.set(left2, 0, left2 + width, height);
+        paint.setAlpha((int) (225 * progress));
+        canvas.drawRect(rect2, paint);
 
 
     }
