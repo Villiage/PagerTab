@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.cyd.pagertab.TabLayout
+        android:id="@+id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="tab1" />
+
+        <TextView
+            android:id="@+id/tab2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="tab2" />
+
+        <TextView
+            android:id="@+id/tab3"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="tab3" />
+
+        <TextView
+            android:id="@+id/tab4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="tab4" />
+    </com.cyd.pagertab.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v4.view.ViewPager>
+
+
+
+
+
+
+</LinearLayout>
