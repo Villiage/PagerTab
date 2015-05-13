@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <com.cyd.pagertab.TabLayout
+    <com.cyd.pagertab_lib.TabLayout
     android:id="@+id/container"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="tab4" />
-    </com.cyd.pagertab.TabLayout>
+    </com.cyd.pagertab_lib.TabLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

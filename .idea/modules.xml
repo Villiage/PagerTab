@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PagerTab.iml" filepath="$PROJECT_DIR$/PagerTab.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pagertab-lib/pagertab-lib.iml" filepath="$PROJECT_DIR$/pagertab-lib/pagertab-lib.iml" />
     </modules>
   </component>
 </project>

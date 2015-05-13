@@ -1,4 +1,4 @@
-package com.cyd.pagertab;
+package com.cyd.pagertab_lib;
 
 import android.content.Context;
 import android.graphics.Canvas;

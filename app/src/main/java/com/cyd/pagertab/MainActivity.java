@@ -2,13 +2,13 @@ package com.cyd.pagertab;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.cyd.pagertab_lib.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         getViews();
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
-         pager.setOnPageChangeListener(opcl);
+         pager.setOnPageChangeListener(onPageChangeListener);
 
     }
     PagerAdapter adapter = new PagerAdapter() {
@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
-    ViewPager.OnPageChangeListener opcl = new ViewPager.OnPageChangeListener() {
+
+    OnPageChangeListener onPageChangeListener = new OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 

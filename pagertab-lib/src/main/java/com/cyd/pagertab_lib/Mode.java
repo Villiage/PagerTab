@@ -1,4 +1,4 @@
-package com.cyd.pagertab;
+package com.cyd.pagertab_lib;
 
 /**
  * Created by dong on 2015/5/13.
