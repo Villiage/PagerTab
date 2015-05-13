@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         getViews();
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
-       pager.setOnPageChangeListener(opcl);
+         pager.setOnPageChangeListener(opcl);
 
     }
     PagerAdapter adapter = new PagerAdapter() {
