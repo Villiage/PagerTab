@@ -1,18 +1,23 @@
 package com.cyd.pagertab_lib;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 /**
  * Created by dong on 2015/5/8.
  */
 public class TabLayout extends LinearLayout {
+    public final static  int MODE_OUTLINE = 0;
+    public final static  int MODE_ALPHA= 1;
+    public final static  int MODE_BLOCK = 2;
     int position = 0;
     int childCount = 4;
     int strokeWidth = 2;
@@ -21,26 +26,33 @@ public class TabLayout extends LinearLayout {
     int outLineColor = Color.CYAN;
     int alphaBgColor = Color.CYAN;
     int blockColor = Color.CYAN;
-    Mode mode = Mode.OUT_LINE;
-
+    int mode = MODE_OUTLINE;
     public TabLayout(Context context) {
         super(context);
-        init();
     }
 
     public TabLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
+        init(context,attrs);
     }
 
     public TabLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
+
+        init(context,attrs);
     }
 
 
-    public void init() {
+    public void init(Context context, AttributeSet attrs) {
 
+        TypedArray array = context.obtainStyledAttributes(attrs,R.styleable.TabLayout);
+        childCount = array.getInt(R.styleable.TabLayout_child_count, childCount);
+        outLineColor = array.getColor(R.styleable.TabLayout_outline_color, outLineColor);
+        alphaBgColor =array.getColor(R.styleable.TabLayout_alphabg_color, alphaBgColor);
+        blockColor = array.getColor(R.styleable.TabLayout_block_color, blockColor);
+
+        strokeWidth = array.getDimensionPixelOffset(R.styleable.TabLayout_strock_width, strokeWidth);
+        mode = array.getInt(R.styleable.TabLayout_mode,mode);
 
     }
 
@@ -55,7 +67,7 @@ public class TabLayout extends LinearLayout {
         int radius = smallRectW / 2;
         int left = (int) (width * (position + progress));
         //        outline
-        if(mode == Mode.OUT_LINE) {
+        if(mode == MODE_OUTLINE) {
 
             Paint paint = new Paint();
             paint.setAntiAlias(true);
@@ -79,7 +91,7 @@ public class TabLayout extends LinearLayout {
             canvas.drawLine(left + width, height - strokeWidth, parentWidth, height - strokeWidth, paint);
         }
 //      alpha background
-        if(mode == Mode.ALPHA_BG) {
+        if(mode == MODE_ALPHA) {
             Paint paint = new Paint();
             paint.setAntiAlias(true);
             paint.setColor(alphaBgColor);
@@ -100,7 +112,7 @@ public class TabLayout extends LinearLayout {
         }
 
 //      flow block
-        if(mode == Mode.FLOW_BLOCK){
+        if(mode == MODE_BLOCK){
 
             Paint paint = new Paint();
             paint.setAntiAlias(true);
@@ -130,7 +142,7 @@ public class TabLayout extends LinearLayout {
         this.blockHeight = blockHeight;
     }
 
-    public  void setMode(Mode mode){
+    public  void setMode(int mode){
         this.mode = mode;
     }
 
